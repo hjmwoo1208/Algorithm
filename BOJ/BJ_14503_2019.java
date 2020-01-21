@@ -1,11 +1,14 @@
+/*  14503ë²ˆ - ë¡œë´‡ì²­ì†Œê¸° 
+* ê²°ê³¼ -ì„±ê³µ */
+
 import java.util.*;
-/*  ·Îº¿Ã»¼Ò±â - ¼º°ø */
+
 public class BJ_14503_2019 {
 
 	public static void main(String[] args) {
 		int N, M,r,c;
 		int d;
-		int map[][] = new int[52][52]; //0 ºóÄ­, 1 º®, 2 Ã»¼Ò
+		int map[][] = new int[52][52]; //0 ë¹ˆì¹¸, 1 ë²½, 2 ì²­ì†Œ
 		int py[]	 = {-1,0,1,0};
 		int px[] = {0,1,0,-1};
 		int cnt = 0;
@@ -29,9 +32,9 @@ public class BJ_14503_2019 {
 		int possible = 0;
 		while(true)
 		{
-			if(possible == 4)//4¹ø µ¹À½
+			if(possible == 4)//4ë²ˆ ëŒìŒ
 			{
-				if(map[r+py[(d+2)%4]][c+px[(d+2)%4]] == 1) //µÚ°¡ º®
+				if(map[r+py[(d+2)%4]][c+px[(d+2)%4]] == 1) //ë’¤ê°€ ë²½
 					break;
 				else 
 				{
