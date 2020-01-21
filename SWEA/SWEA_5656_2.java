@@ -1,5 +1,4 @@
-/* ∫Æµπ ±˙±‚
- * 
+/* 5656Î≤à - Î≤ΩÎèå Íπ®Í∏∞
  */
 
 import java.util.*;
@@ -67,7 +66,7 @@ public class SWEA_5656_2 {
 							{
 								for(int p=0;p<4;p++)
 								{
-									if((tempOut[0]+(py[p]*i)) >= 0 && (tempOut[0]+(py[p]*i)) < H &&  (tempOut[1]+ (px[p]*i)) >=0 && (tempOut[1]+( px[p]*i)) <W)//π¸¿ß æ»¿œ∂ß
+									if((tempOut[0]+(py[p]*i)) >= 0 && (tempOut[0]+(py[p]*i)) < H &&  (tempOut[1]+ (px[p]*i)) >=0 && (tempOut[1]+( px[p]*i)) <W)//Î≤îÏúÑ ÏïàÏùºÎïå
 									{
 										if(thisMap[(tempOut[0]+(py[p]*i))][(tempOut[1]+ (px[p]*i))] == 1)
 											thisMap[(tempOut[0]+(py[p]*i))][(tempOut[1]+ (px[p]*i))] = 0;
@@ -86,7 +85,7 @@ public class SWEA_5656_2 {
 							}
 						}
 						
-						//∫Æµπ ¿ÁπËƒ°
+						//Î≤ΩÎèå Ïû¨Î∞∞Ïπò
 						for(int thisw=0;thisw<W;thisw++)
 						{
 							vec.clear();
@@ -116,7 +115,7 @@ public class SWEA_5656_2 {
 			
 		}//list n
 		
-		//¥Ÿ ≥°≥≤
+		//Îã§ ÎÅùÎÇ®
 		int cnt= 0;
 		for(int h=0;h<H;h++)
 			for(int w=0;w<W;w++)
@@ -135,7 +134,7 @@ public class SWEA_5656_2 {
 		
 		int result[];
 		
-		int T; //N ∫Æµπ ∞πºˆ
+		int T; //N Î≤ΩÎèå Í∞ØÏàò
 
 		T = Integer.parseInt(sc.nextLine());
 		result = new int[T+2];
