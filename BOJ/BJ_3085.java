@@ -1,7 +1,7 @@
 /*
- * ¹éÁØ 3085 : »çÅÁ°ÔÀÓ
- * ¸ÂÀ½
- * for¹®ÀÇ ¹üÀ§ È®ÀÎÇØ¾ß
+ * ë°±ì¤€ 3085 : ì‚¬íƒ•ê²Œì„
+ * ë§ìŒ
+ * forë¬¸ì˜ ë²”ìœ„ í™•ì¸í•´ì•¼
  */
 
 import java.util.*;
@@ -26,27 +26,18 @@ public class BJ_3085 {
 		
 		
 		
-		//¾Æ·¡¶û °°À» ¶§
-		//----ÀÔ·Â ³¡
+		//ì•„ë˜ë‘ ê°™ì„ ë•Œ
+		//----ì…ë ¥ ë
 		
 		int cnt = 1;
 		for(int n =0;n<N;n++)
 		{
 			for(int m=0;m<N-1;m++)
 			{
-				if(candy[n][m] == candy[n][m+1]) //¿À¸¥ÂÊÀÌ¶û °°À» ¶§
+				if(candy[n][m] == candy[n][m+1]) //ì˜¤ë¥¸ìª½ì´ë‘ ê°™ì„ ë•Œ
 				{
 					cnt = 1;
-//					for(int c = 1; c<N-m;c++)
-//					{
-//						if(candy[n][m] == candy[n][m+c])
-//							//cnt += c;
-//						else 
-//						{
-//							m += c;
-//							break;
-//						}
-//					}
+
 					for(int d = m+1;d<N;d++)
 					{
 						if(candy[n][m]==candy[n][d])
@@ -63,19 +54,10 @@ public class BJ_3085 {
 			}
 			for(int m=0;m<N-1;m++)
 			{
-				if(candy[m][n] == candy[m+1][n]) //¾Æ·¡
+				if(candy[m][n] == candy[m+1][n]) //ì•„ë˜
 				{
 					cnt = 1;
-//					for(int c = 1; c<N-m;c++)
-//					{
-//						if(candy[m][n] == candy[m+c][n])
-//							cnt += c;
-//						else 
-//						{
-//							m += c;
-//							break;
-//						}
-//					}
+
 					for(int d = m+1;d<N;d++)
 					{
 						if(candy[m][n] == candy[d][n])
@@ -90,25 +72,25 @@ public class BJ_3085 {
 						max = cnt;
 				}
 			}
-		} //°°Àº °Å ¸ÕÀú È®ÀÎ
+		} //ê°™ì€ ê±° ë¨¼ì € í™•ì¸
 		
-		//-----¹Ù²Ù±â ½ÃÀÛ
+		//-----ë°”ê¾¸ê¸° ì‹œì‘
 		
 		char temp;
 		int sum;
-		for(int n=0;n<N;n++) //<---¿©±â¼­ Æ²·ÈÀ½ n<N-1ÀÌ¶ó°íÇÔ ±×·³ ³¡¿¡´Â ¸ø ¼¼´Ï±ñ Æ²¸²
+		for(int n=0;n<N;n++) //<---ì—¬ê¸°ì„œ í‹€ë ¸ìŒ n<N-1ì´ë¼ê³ í•¨ ê·¸ëŸ¼ ëì—ëŠ” ëª» ì„¸ë‹ˆê¹ í‹€ë¦¼
 		{
 			for(int m=0;m<N-1;m++)
 			{
-				//----------------------------------°¡·Î·Î ¹Ù²åÀ» ¶§ 
+				//----------------------------------ê°€ë¡œë¡œ ë°”ê¿¨ì„ ë•Œ 
 				temp = candy[n][m];
 				candy[n][m] = candy[n][m+	1];
 				candy[n][m+1] = temp;
 				
-				for(int s=0;s<2;s++) //À§¾Æ·¡
+				for(int s=0;s<2;s++) //ìœ„ì•„ë˜
 				{
 					cnt =1;
-					if((n-1) >= 0) //À§·Î
+					if((n-1) >= 0) //ìœ„ë¡œ
 					{
 						for(int a = n-1; a >=0;a--)
 						{
@@ -119,8 +101,8 @@ public class BJ_3085 {
 							else
 								break;
 						}
-					}//À§¿¡
-					if((n+1) <N) //¾Æ·¡
+					}//ìœ„ì—
+					if((n+1) <N) //ì•„ë˜
 					{
 						for(int a = n+1; a<N;a++)
 						{
@@ -131,17 +113,17 @@ public class BJ_3085 {
 							else
 								break;
 						}
-					}//¾Æ·¡
+					}//ì•„ë˜
 					
 					if(max<cnt)
 						max = cnt;
 				}//
 				
 				
-				for(int s=0;s<2;s++) //¿Ş,¿À
+				for(int s=0;s<2;s++) //ì™¼,ì˜¤
 				{
 					cnt =1;
-					if((m+s-1) >= 0) //¿Ş
+					if((m+s-1) >= 0) //ì™¼
 					{
 						for(int a = m+s-1; a >=0;a--)
 						{
@@ -150,14 +132,14 @@ public class BJ_3085 {
 							else
 								break;
 						}
-					}//À§¿¡
+					}//ìœ„ì—
 					if(candy[n][m] != candy[n][m+1])
 					{
 						if(max<cnt)
 							max=cnt;
 						cnt=1;
 					}
-					if((m+s+1) <N) //¿À
+					if((m+s+1) <N) //ì˜¤
 					{
 						for(int a = m+s+1; a<N;a++)
 						{
@@ -168,7 +150,7 @@ public class BJ_3085 {
 							else
 								break;
 						}
-					}//¾Æ·¡
+					}//ì•„ë˜
 					if(max<cnt)
 						max = cnt;
 				}//
@@ -176,21 +158,21 @@ public class BJ_3085 {
 				temp = candy[n][m];
 				candy[n][m] = candy[n][m+	1];
 				candy[n][m+1] = temp;
-				//--------------------------------------------°¡·Î·Î
+				//--------------------------------------------ê°€ë¡œë¡œ
 
-			} //°¹¼ö for m
+			} //ê°¯ìˆ˜ for m
 			
 			for(int m=0;m<N-1;m++)
 			{
-				//-----------------------------------------¼¼·Î·Î
+				//-----------------------------------------ì„¸ë¡œë¡œ
 				temp = candy[m][n];
 				candy[m][n] = candy[m+1][n];
 				candy[m+1][n] = temp;
 				
-				for(int s=0; s<2;s++) //¿Ş, ¿À
+				for(int s=0; s<2;s++) //ì™¼, ì˜¤
 				{
 					cnt=1;
-					if((n-1)>=0)//¿Ş
+					if((n-1)>=0)//ì™¼
 					{
 						for(int d=n-1;d>=0;d--)
 						{
@@ -202,7 +184,7 @@ public class BJ_3085 {
 					}
 					if(n+1<N)
 					{
-						if(candy[m+s][n] != candy[m+s][n+1]) //¿ŞÂÊÀÌ¶û °°ÀºÁö ÆÇ´Ü
+						if(candy[m+s][n] != candy[m+s][n+1]) //ì™¼ìª½ì´ë‘ ê°™ì€ì§€ íŒë‹¨
 						{
 							if(max<cnt)
 								max = cnt;
@@ -222,24 +204,24 @@ public class BJ_3085 {
 					}
 				}
 				
-				if((m-1)>=0)//À§
+				if((m-1)>=0)//ìœ„
 				{
 					cnt =1;
-					for(int d = m-1; d>=0;d--) //À§·Î 
+					for(int d = m-1; d>=0;d--) //ìœ„ë¡œ 
 					{
 						if(candy[m][n] == candy[d][n])
 							cnt++;
 						else
 							break;
 					}
-					if(candy[m][n] != candy[m+1][n]) //À§¾Æ·¡ °°Áö ¾ÊÀ¸¸é
+					if(candy[m][n] != candy[m+1][n]) //ìœ„ì•„ë˜ ê°™ì§€ ì•Šìœ¼ë©´
 					{
 						if(max<cnt)
 							max = cnt;
 						cnt=1;
 					}
 					
-					for(int d=m+1;m<N;d++) //¾Æ·¡
+					for(int d=m+1;m<N;d++) //ì•„ë˜
 					{
 						if(candy[m][n] == candy[d][n])
 							cnt++;
@@ -257,7 +239,7 @@ public class BJ_3085 {
 				//--------------------------------------------
 			}
 			
-		}//°¹¼ö for n
+		}//ê°¯ìˆ˜ for n
 		
 		System.out.println(max);
 		
