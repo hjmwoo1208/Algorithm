@@ -1,5 +1,4 @@
-/* 5656번 - 벽돌 깨기
- */
+/* 5656번 - 벽돌 깨기 */
 
 import java.util.*;
 public class SWEA_5656_2 {
