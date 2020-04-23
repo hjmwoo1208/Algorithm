@@ -1,9 +1,9 @@
 import java.util.*;
-/* ¼º°ø
- * ½±°Ô for¹®À¸·Î µ¹·Á¼­ ³¡³»·ÁÇÏ¸é ¸Ş¸ğ¸® ÃÊ°ú°¡ ³­´Ù.
- * ÀÚ¸´¼ö °è»êÀ» ÇØ¼­ °è»êÀ» ÃÖ´ëÇÑ Àû°Ô ÇØ¾ßÇÑ´Ù.
+/* ì„±ê³µ
+ * ì‰½ê²Œ forë¬¸ìœ¼ë¡œ ëŒë ¤ì„œ ëë‚´ë ¤í•˜ë©´ ë©”ëª¨ë¦¬ ì´ˆê³¼ê°€ ë‚œë‹¤.
+ * ìë¦¿ìˆ˜ ê³„ì‚°ì„ í•´ì„œ ê³„ì‚°ì„ ìµœëŒ€í•œ ì ê²Œ í•´ì•¼í•œë‹¤.
  */
-public class BJ_1790 {
+public class Main {
 	public static void main (String[] args) {
 		Scanner sc =new Scanner(System.in);
 		int N = sc.nextInt();
@@ -16,18 +16,18 @@ public class BJ_1790 {
 			else
 				System.out.println(K);
 		}
-		else//2ÀÚ¸®¼öÀÌ»ó
+		else//2ìë¦¬ìˆ˜ì´ìƒ
 		{
 			int len=0 , tmpK=0;
-			//double ¹üÀ§ 15ÀÚ¸®±îÁö °¡´É
-			double idx=9; //len = KÀÇ ÀÚ¸´¼ö, tmpK = ÀÌÀü ÀÚ¸´¼öÁ¦°Å
-			for(int i=2;i<=10;i++) //¸îÀÚ¸®¼ö ¼ıÀÚÀÎÁö Ã£±â
+			//double ë²”ìœ„ 15ìë¦¬ê¹Œì§€ ê°€ëŠ¥
+			double idx=9; //len = Kì˜ ìë¦¿ìˆ˜, tmpK = ì´ì „ ìë¦¿ìˆ˜ì œê±°
+			for(int i=2;i<=10;i++) //ëª‡ìë¦¬ìˆ˜ ìˆ«ìì¸ì§€ ì°¾ê¸°
 			{
-				double tmp = 9 * Math.pow(10, i-1)*i; // *i ·Î ÇØ¾ß µÇ´Âµ¥ *2·Î ÇØ¼­ Æ²¸² (µÎ ÀÚ¸®¼ö·Î Å×½ºÆ®ÇÏ´Ù°¡ ÀÏ¹İÈ­½ÃÅ´)
+				double tmp = 9 * Math.pow(10, i-1)*i; // *i ë¡œ í•´ì•¼ ë˜ëŠ”ë° *2ë¡œ í•´ì„œ í‹€ë¦¼ (ë‘ ìë¦¬ìˆ˜ë¡œ í…ŒìŠ¤íŠ¸í•˜ë‹¤ê°€ ì¼ë°˜í™”ì‹œí‚´)
 				if( K<= (tmp+idx))
 				{
 					len = i;
-					tmpK = (int) (K -idx); //int Ä³½ºÆÃ ÇØ¾ßÁö µÚ¿¡ ±ò²ûÇÏ°Ô ¶³¾îÁü
+					tmpK = (int) (K -idx); //int ìºìŠ¤íŒ… í•´ì•¼ì§€ ë’¤ì— ê¹”ë”í•˜ê²Œ ë–¨ì–´ì§
 					break;
 				}
 				else
@@ -37,7 +37,7 @@ public class BJ_1790 {
 			String str ="";
 			if(tmpK%len == 0)
 			{
-				int start = (int) Math.pow(10, len-1) + (tmpK/len) -1;  //int Ä³½ºÆÃ ÇØ¾ßÁö µÚ¿¡ ±ò²ûÇÏ°Ô ¶³¾îÁü
+				int start = (int) Math.pow(10, len-1) + (tmpK/len) -1;  //int ìºìŠ¤íŒ… í•´ì•¼ì§€ ë’¤ì— ê¹”ë”í•˜ê²Œ ë–¨ì–´ì§
 				if(start<= N)
 				{
 					str = Integer.toString(start);
