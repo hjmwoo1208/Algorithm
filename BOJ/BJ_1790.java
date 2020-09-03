@@ -11,10 +11,8 @@ public class BJ_1790 {
 		int result = -1;
 		if( K <= 9)
 		{
-			if(N<K)
-				System.out.println(result);
-			else
-				System.out.println(K);
+			if(N<K) 	System.out.println(result);
+			else	System.out.println(K);
 		}
 		else//2자리수이상
 		{
@@ -30,10 +28,8 @@ public class BJ_1790 {
 					tmpK = (int) (K -idx); //int 캐스팅 해야지 뒤에 깔끔하게 떨어짐
 					break;
 				}
-				else
-					idx += tmp;
+				else	idx += tmp;
 			}
-			
 			String str ="";
 			if(tmpK%len == 0)
 			{
@@ -43,10 +39,8 @@ public class BJ_1790 {
 					str = Integer.toString(start);
 					System.out.println(str.charAt(str.length()-1)-'0');
 				}
-				else
-					System.out.println(-1);
-			}
-			else
+				else	System.out.println(-1);
+			}else
 			{
 				int start = (int) Math.pow(10, len-1) + (tmpK/len);
 				if(start <= N)
@@ -54,11 +48,8 @@ public class BJ_1790 {
 					str = Integer.toString(start);
 					System.out.println(str.charAt((tmpK%len)-1)-'0');
 				}
-				else
-					System.out.println(-1);
+				else	System.out.println(-1);
 			}
-			
 		}
-		
 	}//main
 }
