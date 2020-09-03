@@ -3,7 +3,7 @@ import java.util.*;
  * 쉽게 for문으로 돌려서 끝내려하면 메모리 초과가 난다.
  * 자릿수 계산을 해서 계산을 최대한 적게 해야한다.
  */
-public class Main {
+public class BJ_1790 {
 	public static void main (String[] args) {
 		Scanner sc =new Scanner(System.in);
 		int N = sc.nextInt();
