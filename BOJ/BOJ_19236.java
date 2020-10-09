@@ -36,7 +36,6 @@ public class BOJ_19236 {
 			int x = shark[1] + px[map[1][shark[0]][shark[1]]]*mul;
 			if(y<0|| x<0 || y>3 || x>3) break; //범위 넘어가면 더 볼 필요X
 			if(map[0][y][x]==0) continue; //0이면 pass
-			
 			//먹을 물고기가 있다면
 			int newMap[][][] = new int[2][4][4];
 			for(int i=0;i<2;i++)
