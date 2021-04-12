@@ -52,7 +52,7 @@ public class BOJ_16918 {
 					for(int p=0;p<4;p++) {
 						int y = out.y + py[p];
 						int x = out.x + px[p];
-						if(y<0 || x<0 || y>=R || x>=C || time[y][x] == out.time) continue; //경계값은 넘긴다.
+						if(y<0 || x<0 || y>=R || x>=C || time[y][x] == out.time) continue; //경계값 체크 및 터지는 시간이 같은 폭탄은 터트리지 않는다. time의 값과 queue의 값이 같지 않으면 폭탄이 터지지 않기 때문에 
 						time[y][x] = 0; //폭탄이 터진 곳은 0으로 변환
 					}
 					time[out.y][out.x] = 0; //폭탄 터진 곳
