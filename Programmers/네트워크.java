@@ -13,7 +13,7 @@ public class 네트워크 {
         		for(int j=0;j<n;j++)
         			if(j!=out) {
         				if(computers[out][j]==1 && !visited[j]) {
-        					q.offer(j);
+        					q.offer(j); 
         					visited[j] = true;
         				}
         			}
