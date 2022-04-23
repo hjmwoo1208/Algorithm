@@ -1,10 +1,10 @@
 import java.util.*;
 import java.io.*;
 /*
- * 백준 1167 - 최소 스패닝 트리
+ * 백준 1197 - 최소 스패닝 트리
  * - 크루즈칼 방식
  */
-public class BOJ_1167_Kruskal {
+public class BOJ_1197_Kruskal {
 	static class Edge implements Comparable<Edge>{
 		int start, end, weight;
 
