@@ -1,5 +1,10 @@
 import java.util.*;
 import java.io.*;
+/**
+ * [백준] 1753 - 최단 경로
+ * @author WOOHJ
+ * - 다익스트라 알고리즘
+ */
 public class BOJ_1753_Dijkstra {
 	static class Node implements Comparable<Node>{
 		int end, weight;
@@ -23,6 +28,7 @@ public class BOJ_1753_Dijkstra {
 		
 		int start = Integer.parseInt(br.readLine());
 
+		// 가중치 저장
 		List<int[]> weight[] = new LinkedList[V+2];
 		for(int i=1;i<=V;i++) weight[i] = new LinkedList<int[]>();
 		int dist[] = new int[V+2];
@@ -33,10 +39,12 @@ public class BOJ_1753_Dijkstra {
 			weight[Integer.parseInt(stz.nextToken())].add(new int[] {Integer.parseInt(stz.nextToken()),Integer.parseInt(stz.nextToken())});
 		}
 		
+		// 이미 방문이 끝난 정점
 		boolean visited[] = new boolean[V+2];
 		visited[start] = true;
 		dist[start] = 0;
 		
+		// 가중치 오름차순
 		PriorityQueue<Node> pq = new PriorityQueue<Node>();
 		for(int[] n : weight[start]) {
 			dist[n[0]] = dist[n[0]] > dist[start] + n[1] ? dist[start] + n[1] : dist[n[0]];
